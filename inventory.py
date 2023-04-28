@@ -289,7 +289,7 @@ class Location:
                     section.free_lwh[2] -= t_height
 
             new_section = Section(x, y, z, length, width, height, s_type, consolidation)
-            self.sections.update({name: new_section})
+            self.sections.append(new_section)
 
     def remove_section(self, index, space_to=None, space_to_type='even'):
         if space_to is None:
