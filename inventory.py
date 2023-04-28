@@ -65,9 +65,13 @@ class Inventory:
     # region Location - Item // Methods
 
     def move_package(self, package, from_loc, to_loc):
-        self.location_library[from_loc].remove_package(package)
-        self.location_library[to_loc].add_package(package)
-        package.location = to_loc
+        if isinstance(from_loc, str):
+            from_loc = self.location_library[from_loc]
+        if isinstance(to_loc, str):
+            to_loc = self.location_library[to_loc]
+
+        from_loc.remove_package(package)
+        to_loc.add_package(package)
 
     # endregion
 
@@ -324,7 +328,11 @@ class Location:
 
         section.add_package(package)
 
-    def get_packages(self):
+    def remove_package(self, package):
+        print(self.sections[package.section_index])
+        self.sections[package.section_index].remove_package(package)
+
+    def get_packages(self, packages=None):
         return [x for y in self.sections for x in y.packages]
 
     def get_items(self):
@@ -402,9 +410,11 @@ class Section:
         self.items.update({package.item_object.name: package.item_object})
         self.packages.append(package)
 
+    def remove_package(self, package):
+        self.items.pop(package.item_object.name)
+
     def set_layout(self):
         dims = [itertools.permutations([x.length, x.width, x.height]) for x in self.packaging_type_objects]
-
 
 class Item:
     def __init__(self, name, weight):
@@ -477,13 +487,14 @@ class PackagingType:
 
 class Package:
     def __init__(self, packaging_type_object, item_quantity,
-                 location, parent, child=None, package_quantity=1):
+                 location, parent, child=None, package_quantity=1, section_index=0):
 
         self.package_quantity = package_quantity
         self.packaging_type_object = packaging_type_object
         self.parent = parent
         self.child = child
         self.location = location
+        self.section_index = section_index
         self.item_quantity = item_quantity
         self.item_object = packaging_type_object.item_object
         self.weight = self.item_object.weight * item_quantity
