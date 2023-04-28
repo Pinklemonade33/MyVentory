@@ -57,7 +57,7 @@ may become a set of tools.
     - **example 1** `inv.create_package(item_name, packaging_type_object, location, item_quantity='default', package_quantity=1)`
     - **example 2** `inv.create_package('Chair', pt, 'AA1', 1, package_quantity=2)`
 10. Select Package
-    - package = item.packages[0]`
+    - `package = item.packages[0]`
 11. Move Package
     - **example 1** `inv.move_package(package, from_loc, to_loc)`
     - **example 2** `inv.move_package(package, 'AA1', 'AA2')`
