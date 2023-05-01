@@ -1,12 +1,12 @@
 # MyVentory: an inventory management system built with Python 
 
-# Purpose 
+## Purpose 
 
 The purpose of MyVentory is to experiment with ideas related to space management and 
 possibly build something useful. it may grow into its own independent application or it
 may become a set of tools.
 
-# Whats built
+## Whats built
 
 #### As of 4/27/2023 most of the basics related to creating an inventory have been built and the following can be done in the Python console
 
@@ -17,7 +17,7 @@ may become a set of tools.
 - Identical packages can be detected when adding a new package object to a location, when the identical package is detected the quantity of that identical package is increased rather than adding a new package object to the location.
 - Sections can be created within locations as a way of dividing space for organizational reasons
 
-# Whats planned
+## Whats planned
 
 - 26 to be the limit for generate_locations method argument values for letters representing numbers. Values exceeding 26 will become numbers instead
 - Packages can be consolidated into their location
@@ -29,7 +29,7 @@ may become a set of tools.
 - Simplification By creating a GUI
 - Large part of the code to be rewritten with pandas and possibly Cython for optimization
 
-# How to use 
+## How to use 
 
 1. Clone this repo `git clone https://github.com/Pinklemonade33/MyVentory`
 2. With Python console do the following...
