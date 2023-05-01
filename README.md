@@ -1,4 +1,4 @@
-# MyVentory: an inventory management system built with Python. 
+# MyVentory: an inventory management system built with Python 
 
 # Purpose 
 
