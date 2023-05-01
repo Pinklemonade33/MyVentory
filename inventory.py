@@ -416,6 +416,7 @@ class Section:
     def set_layout(self):
         dims = [itertools.permutations([x.length, x.width, x.height]) for x in self.packaging_type_objects]
 
+
 class Item:
     def __init__(self, name, weight):
         self.name = name

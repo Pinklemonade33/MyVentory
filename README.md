@@ -1,6 +1,4 @@
-# What is MyVentory?
-
-MyVentory is an Inventory management system being built with Python. 
+# MyVentory: an inventory management system built with Python. 
 
 # Purpose 
 
