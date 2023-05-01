@@ -1,7 +1,5 @@
 # MyVentory: an inventory management system built with Python 
 
-## Purpose 
-
 The purpose of MyVentory is to experiment with ideas related to space management and 
 possibly build something useful. it may grow into its own independent application or it
 may become a set of tools.
