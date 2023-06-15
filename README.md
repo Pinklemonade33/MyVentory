@@ -35,25 +35,19 @@ may become a set of tools.
 4. Initialize the inventory class `inv = Inventory()`
 5. Create Locations within your inventory object
     - By generating them with the generate_locations method (proffered)
-        * **example 1** `inv.generate_locations(loc_range_x, loc_range_y, loc_range_z)`
-        * **example 2** `inv.generate_locations(10, 10, 3)`
+        - `inv.generate_locations(loc_range_x=10, loc_range_y=10, loc_range_z=3)`
     - Or creating them manually with the create_location method (not proffered)
-        * **example 1** `create_location(x, y, z, length, width, height, name, s_type)`
-        * **example 2** `create_locations(1, 1, 1, 10, 10, 10, 'AA1', 'static')`
+        * `create_location(x=1, y=1, z=1, length=10, width=10, height=10, name='AA1', s_type='static')`
 6. Create an Item 
-    - **example 1** `inv.create_item(name, weight=0)`
-    - **example 2** `inv.create_item('Chair', 20)`
+    - `inv.create_item(name='Chair', weight=20)`
 7. Create a PackagingType object
-    - **example 1** `inv.create_packaging_type_object(item, length, width, height, quantity_type)`
-    - **example 2** `inv.create_packaging_type_object('Chair', 5, 5, 5, 'static')`
+    - `inv.create_packaging_type_object(item=Chair, length=5, width=5, height=5, quantity_type='static')`
 8. Select Packaging Type object 
     1. `item = inv.item_library['Chair']`
     2. `pt = item.packaging_type_objects[0]`
 9. Create a Package
-    - **example 1** `inv.create_package(item_name, packaging_type_object, location, item_quantity='default', package_quantity=1)`
-    - **example 2** `inv.create_package('Chair', pt, 'AA1', 1, package_quantity=2)`
+    - `inv.create_package(item_name='Chair', packaging_type_object=pt, location='AA1, item_quantity=1, package_quantity=1)`
 10. Select Package
     - `package = item.packages[0]`
 11. Move Package
-    - **example 1** `inv.move_package(package, from_loc, to_loc)`
-    - **example 2** `inv.move_package(package, 'AA1', 'AA2')`
+    - `inv.move_package(package=package, from_loc='AA1, to_loc='AA2')`
